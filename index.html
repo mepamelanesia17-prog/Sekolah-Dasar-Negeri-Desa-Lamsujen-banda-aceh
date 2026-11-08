@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Pendataan Siswa SD Negeri Lamsujen</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo-circle">
+  <img src="7.png" alt="Logo Sekolah">
+</div>
+  <div class="header-text">
+    <h1>Sekolah Dasar Negeri Desa Lamsujen</h1>
+    <span>Kecamatan Lhoong Kabupaten Aceh Besar</span>
+  </div>
+  <button class="logout" onclick="logout()">Logout</button>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h3>Form Pendataan Siswa</h3>
+<form id="studentForm" class="grid">
+<input type="hidden" id="editIndex">
+
+<div>
+<label>Nama Siswa</label>
+<input type="text" id="nama" required>
+</div>
+
+<div>
+<label>NPM / NIS</label>
+<input type="text" id="npm" required>
+</div>
+
+<div>
+<label>Nomor Wali</label>
+<input type="text" id="wali" required>
+</div>
+
+<div>
+<label>Kelas</label>
+<select id="kelas" required>
+<option value="">Pilih</option>
+<option>1A</option><option>1B</option>
+<option>2A</option><option>2B</option>
+<option>3A</option><option>3B</option>
+<option>4A</option><option>4B</option>
+<option>5A</option><option>5B</option>
+<option>6A</option><option>6B</option>
+</select>
+</div>
+
+<div class="full">
+<label>Alamat</label>
+<input type="text" id="alamat" required>
+</div>
+
+<div class="full">
+<button class="save">Simpan Data</button>
+</div>
+</form>
+</div>
+
+<div class="card flex">
+<input type="text" id="search" placeholder="Cari data siswa...">
+<select id="filterKelas">
+<option value="">Semua Kelas</option>
+<option>1A</option><option>1B</option>
+<option>2A</option><option>2B</option>
+<option>3A</option><option>3B</option>
+<option>4A</option><option>4B</option>
+<option>5A</option><option>5B</option>
+<option>6A</option><option>6B</option>
+</select>
+<button onclick="exportCSV()">Export Excel</button>
+</div>
+
+<div class="card">
+<h3>Rekap Jumlah Siswa per Kelas</h3>
+<ul id="rekap"></ul>
+</div>
+
+<div class="card">
+<h3>Data Siswa</h3>
+<table>
+<thead>
+<tr>
+<th>No</th><th>Nama</th><th>NPM</th><th>Wali</th><th>Kelas</th><th>Alamat</th><th>Aksi</th>
+</tr>
+</thead>
+<tbody id="dataSiswa"></tbody>
+</table>
+</div>
+
+</div>
+
+
+<script src="js/script.js"></script>
+</body>
+</html>
